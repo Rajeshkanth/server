@@ -17,9 +17,6 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log(`user connected ${(c += 1)}`);
 
-  socket.on("qrScanned", (data) => {
-    console.log(data);
-  });
   socket.on("donateDone", (value) => {
     if (value.donated) {
       io.emit("success", true);
@@ -27,7 +24,7 @@ io.on("connection", (socket) => {
     }
   });
   socket.on("cancel", (val) => {
-    if (val === false) {
+    if (val.donated) {
       console.log(val);
       io.emit("failed", true);
     }
