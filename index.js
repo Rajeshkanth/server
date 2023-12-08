@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
   socket.on("cancel", (val) => {
     if (val === false) {
       console.log(val);
-      socket.emit("failed", true);
+      io.emit("failed", true);
     }
   });
 });
