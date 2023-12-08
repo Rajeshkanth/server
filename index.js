@@ -24,7 +24,7 @@ io.on("connection", (socket) => {
     }
   });
   socket.on("cancel", (val) => {
-    if (val.donated) {
+    if (val.cancelled) {
       console.log(val);
       io.emit("failed", true);
     }
