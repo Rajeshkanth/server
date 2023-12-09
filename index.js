@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
 
   socket.on("donateDone", (value) => {
     if (value.donated) {
-      io.emit("success", true);
+      io.emit("success", {details:value.details});
       console.log(value);
     }
   });
