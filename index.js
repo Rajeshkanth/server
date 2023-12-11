@@ -10,7 +10,7 @@ var c = 0;
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://rajeshkanth.github.io/feed-someone",
   },
 });
 
